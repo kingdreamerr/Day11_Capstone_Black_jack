@@ -48,7 +48,7 @@ if elif and else
 
 #### Preview:
 
-![black jack](./black.png)
+![black jack](/black.png)
 
 ## How to run this on your device
 
