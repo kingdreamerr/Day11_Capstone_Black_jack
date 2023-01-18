@@ -36,6 +36,7 @@ def compare_scores(user,computer):
   else:
     return "You lose!"
 
+
 def black_jack():
   print(logo)
   computer_cards = []
@@ -45,3 +46,32 @@ def black_jack():
   for _ in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
+
+  while not is_game_over:
+      
+    user_score = calculate(user_cards)
+    computer_score = calculate(computer_cards)
+
+    print(f"your cards: {user_cards}, current score: {user_score}")
+    print(f"computer first card: {computer_cards[0]}")
+
+    if user_score == 0 or computer_score == 0 or user_score > 21:
+      is_game_over = True
+    else:
+      go_on = input("Gett more cards? 'y' for yes and 'n' for no: ")
+      if go_on == 'y':
+        user_cards.append(deal_card())
+        user_score = calculate(user_cards)
+        print(f"your cards: {user_cards}, current score: {user_score}")
+      else:
+        is_game_over = True
+
+  while computer_score !=0 and computer_score < 17:
+    computer_cards.append(deal_card())
+    computer_score = calculate(computer_cards)
+
+  print(compare_scores(user_score,computer_score))
+
+while input("Do you want to play a game of Blackjack? type 'y' to play and 'n' for no: ") == 'y':
+  os.system("clear")
+  black_jack()
