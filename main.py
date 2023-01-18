@@ -19,3 +19,19 @@ def calculate(cards):
     cards.append(1)
   
   return sum(cards)
+
+def compare_scores(user,computer):
+  if user == computer:
+    return "Draw"
+  elif computer == 0:
+    return "Lose, opponent has a Blackjack"
+  elif user == 0:
+    return "Win with Blackjack"
+  elif user > 21:
+    return "You went over. You lose"
+  elif computer > 21:
+    return "Opponent went over. You win"
+  elif user > computer:
+    return "You win!"
+  else:
+    return "You lose!"
