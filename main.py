@@ -35,3 +35,13 @@ def compare_scores(user,computer):
     return "You win!"
   else:
     return "You lose!"
+
+def black_jack():
+  print(logo)
+  computer_cards = []
+  user_cards = []
+  is_game_over = False
+
+  for _ in range(2):
+    user_cards.append(deal_card())
+    computer_cards.append(deal_card())
